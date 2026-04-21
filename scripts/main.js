@@ -1,7 +1,10 @@
 import { Employees } from "./Employees.js";
 import { Orders } from "./Orders.js";
 import { Products } from "./Products.js";
+import { getProducts } from "./database.js";
 
+//click event listener access for orders and products
+const products = getProducts()
 const mainContainer = document.querySelector("#container")
 
 const applicationHTML = `
@@ -22,6 +25,22 @@ const applicationHTML = `
     ${Orders()}
 </article>
 `
+
+// click event listener for products
+document.addEventListener(
+    "click",
+    (clickEvent) => {
+        const itemClicked = clickEvent.target
+
+        if (itemClicked.dataset.type === "product") {
+            const productId = parseInt(itemClicked.dataset.id)
+
+// Find the product object so we can access its price
+        const product = products.find(prod => prod.id === productId)
+            window.alert(`${product.name} costs : $${product.price}`)
+        }
+    }
+)
 
 mainContainer.innerHTML = applicationHTML
 

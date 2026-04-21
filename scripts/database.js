@@ -31,6 +31,8 @@ const database = {
         {id: 8, name: "Americano", price: 11.00},
         {id: 9, name: "Cubano", price: 14.99},
         {id: 10, name: "Cappucino", price: 12.49},
+        {id: 11, name: "Pumpkin Spice Latte", price: 13.99} // Added product for undefined error
+        
     ],
    
     orders: [
