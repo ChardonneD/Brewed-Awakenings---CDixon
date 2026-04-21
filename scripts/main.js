@@ -37,7 +37,7 @@ document.addEventListener(
 
 // Find the product object so we can access its price
         const product = products.find(prod => prod.id === productId)
-            window.alert(`${product.name} costs : $${product.price}`)
+            window.alert(`${product.name} costs : $${product.price.toFixed(2)}`) // make sure that decimal places was at the tenths place
         }
     }
 )
